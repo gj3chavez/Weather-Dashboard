@@ -1,17 +1,18 @@
 
-let today =moment().format('L');
+let today = dayjs().format('MM/DD/YYYY');
 let cityList = [];
-let key = '87fe310e9bafd2b67ff099e357f73ff1';
+
+let APIkey = "87fe310e9bafd2b67ff099e357f73ff1";
 
 
 
 function currentWeather(city){
     
 
-    let weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid={key}`;
+    let queryURL = `https://api.openweathermap.org/data/2.5/forecast?qt=${city}&units=imperial&appid=${APIkey}`;
 
     $.ajax({
-        url: weatherURL,
+        url: queryURL,
         method:"GET",
     }).then(function(currentWeather){
         console.log(currentWeather);
@@ -19,27 +20,41 @@ function currentWeather(city){
         $("#forecast_content").css("display", "block");
         $("#current_city").empty();
 
-        let weatherIcon = weatherForecast.weather[0].icon;
+        let weatherIcon = currentWeather.weather[0].icon;
         let iconURL = `https://api.openweathermap.org/img/w/${weatherIcon}.png`;
         
   let currentCity = $(`
     <h2 id='currentCity'>
-    ${weatherForecast.name} ${today}<img src='${iconURL}' alt='${weatherForecast.weather[0].description}'/></h2>
-    <p> Temp:${weatherForecast.main.temp} °F</p>
-    <p> Humidity:${weatherForecast.main.humidity} \%</p>
-    <p> Wind Speed:${weatherForecast.main.speed} MPH</p>
+    ${currentWeather.name} ${today}<img src='${iconURL}' alt='${currentWeather.weather[0].description}'/></h2>
+    <p> Temp:${currentWeather.main.temp} °F</p>
+    <p> Humidity:${currentWeather.main.humidity} \%</p>
+    <p> Wind Speed:${currentWeather.main.speed} MPH</p>
   `);
 
 $('#current_city').append(currentCity);
+
+let lat = currentWeather.coord.lat;
+let lon = currentWeather.coord.lon;
+let uviQueryUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}`;
+
+$.ajax({
+    url: uviQueryUrl,
+    method: 'GET'
+}).then(function(uviResult){
+    console.log(uviResult);
+
+    let uvIndex = uviResult.value;
+    let uviIndex
+})
     });
 }
 
 function futureWeather(lat, lon){
 
-    let futureURL = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&exclude=current,minutely,hourly,alert&appid={key}`;
+    let futureURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alert&appid=${APIkey}`;
     $.ajax({
         url: futureURL,
-        method "GET",
+        method: "GET",
     }).then(function(futureData){
         console.log(futureData);
         $('#forecast').empty();
@@ -58,8 +73,8 @@ function futureWeather(lat, lon){
 
             let futureResults = $(`
                 <div class= 'pl-4'>
-                    <div class= 'card pl-4 pt-4 mb-4 bg-primary text-dark' style='width: 15rem;>
-                        <div class= 'card'>
+                    <div class= 'card pl-4 pt-4 mb-4 bg-primary text-dark' style='width: 13rem;>
+                        <div class= 'card-body'>
                             <h5>${present}</h5>
                             <p>${iconURL}</p>
                             <p> Temp:${forecast.temp} °F</p>
@@ -79,29 +94,29 @@ function futureWeather(lat, lon){
 $('#submit').on('click', function(event){
     event.preventDefault();
 
-    let city = $('#city_input').val().trim();
+    let city = $('#enter_city').val().trim();
     currentWeather(city);
     if (!cityList.includes(city)){
         cityList.push(city);
-        let searchedCities = $(`<li class='show-cities>${city}</li>`);
-        $('#city_container').append(searchedCities);
+        let newSearchCity = $(`<li class='city_container'>${city}</li>`);
+        $('#city_container').append(newSearchCity);
     };
 
     localStorage.setItem('city', JSON.stringify(cityList));
     console.log(cityList);
 });
 
-$(document).on('click', '.show-cities', function(){
+$(document).on('click', '.city_container', function(){
     let showCity = $(this).text();
     currentWeather(showCity);
 });
 
 $(document).ready(function(){
-    let cityListArr = JSON.parse(localStorage.getItem('city'));
+    let lastSearchedCity = JSON.parse(localStorage.getItem('city'));
 
-    if(cityListArr !== null){
-        let searchedHistory = cityListArr.length -1;
-        let searchedCity = cityListArr[searchedHistory];
+    if(lastSearchedCity !== null){
+        let searchedHistory = lastSearchedCity.length -1;
+        let searchedCity = lastSearchedCity[searchedHistory];
         currentWeather(searchedCity);
         console.log(`Searched city: ${searchedCity}`);
 

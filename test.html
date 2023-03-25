@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ajax-bootstrap-select/1.4.5/css/ajax-bootstrap-select.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/65ce8f9f8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body>
+ <div class="container-fluid text-center text-white">
+      <h1 class="tittle">Weather Dashboard</h1>
+   
+
+    <div class="row">
+      <div class="col-4 bg-light pb-2 pt-4" id="city_search">
+        <div class="row">
+          <div class="col-10">
+            <h4>Enter a city:</h4>
+          </div>
+
+          <div class="row">
+            <div class="col-10">
+              <div class="input_city">
+                <input class="cities"
+                  type="text"
+                  id="enter_city" placeholder="City">
+                <button id="submit" type="button" class="search_btn"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-10">
+              <ul id="city_container" class="city_container"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="forecast_content" class="col-10 pb-4 pt-4">
+          <div class="row pb-3 mr-2 ml-2">
+            <div
+              id="current_city"
+              class="col-10 border rounded px-2 py-2"
+            ></div>
+          </div>
+
+          <div class="row pb-2 pt-1">
+            <div class="col-10 ml-2">
+              <h3>5 Day Forecast:</h3>
+            </div>
+          </div>
+
+          <div id="forecast" class="row pl-2"></div>
+        </div>
+      </div>
+</div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
