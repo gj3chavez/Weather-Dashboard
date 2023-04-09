@@ -3,6 +3,12 @@
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) 
 
+## App Preview
+| Search Weather Page | Current Weather Page |
+|---------------------|----------------------|
+|![Weather Dashboard](./assets/images/Screenshot-weather2.png)|![Weather Dashboard](./assets/images/Screenshot%20weather-1.png)
+
+
 ## Description
 
 This a weather dashboard with form inputs
