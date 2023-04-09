@@ -9,6 +9,12 @@
 |![Weather Dashboard](./assets/images/Screenshot-weather2.png)|![Weather Dashboard](./assets/images/Screenshot%20weather-1.png)
 
 
+## Technologies
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+
 ## Description
 
 This a weather dashboard with form inputs
