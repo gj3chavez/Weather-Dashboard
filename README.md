@@ -1,4 +1,10 @@
 # Weather Dashboard
+![License](https://img.shields.io/badge/License%20-MIT-orange) <br/>
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) 
+
+## Description
+
 This a weather dashboard with form inputs
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history
