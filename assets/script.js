@@ -10,7 +10,9 @@ function updateCurrentWeather(data){
     const date = new Date(data.dt * 1000);
     const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
-    document.getElementById("date").textContent = "Current Weather for";
+
+
+    document.getElementById("date").textContent = "Current Weather";
     document.getElementById("current_date").textContent = date.toLocaleString();
     document.getElementById("current_icon").setAttribute("src", iconUrl);
 
@@ -24,6 +26,7 @@ function updateCurrentWeather(data){
     document.getElementById("wind").textContent = `${wind}m/s`;
     document.getElementById("description").textContent = data.weather[0].description;
 }
+
 
 async function updateForecast(city){
     const apiKey = "e19b31d29dd2a6a32e1f805c276a0c33";
