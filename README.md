@@ -1,19 +1,8 @@
 # Weather Dashboard
+
 ![License](https://img.shields.io/badge/License%20-MIT-orange) <br/>
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) 
-
-## App Preview
-| Search Weather Page | Current Weather Page |
-|---------------------|----------------------|
-|![Weather Dashboard](./assets/images/Screenshot-weather2.png)|![Weather Dashboard](./assets/images/Screenshot%20weather-1.png)
-
-
-## Technologies
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
 
 ## Description
 
@@ -26,3 +15,20 @@ WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+
+
+## App Preview
+| Search Weather Page | Current Weather Page |
+|---------------------|----------------------|
+|![Weather Dashboard](./assets/images/Screenshot%20wd-1.png)|![Weather Dashboard](./assets/images/Screenshot%20wd-2.png)
+
+
+## Technologies
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+
+## License
+
+![License](https://img.shields.io/badge/License%20-MIT-orange) <br/>
