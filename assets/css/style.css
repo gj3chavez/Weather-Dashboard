@@ -1,0 +1,76 @@
+/* ===1.GLOBAL=== */
+* {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* ===2.HEADER=== */
+
+nav {
+    color: white;
+    font-size: 46px;
+    text-align: center;
+}
+.bg-dark {
+    background-color: #00bcd4!important;
+}
+
+/* ===3.SEARCH SECTION=== */
+
+#search-section {
+    background-color: rgb(240, 252, 252);
+    opacity: 90%;
+    /* padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 0.30rem; */
+    /* border: 1px solid; */
+    /* position: relative;
+    display: block; */
+    /* flex-direction: column; */
+    /* box-sizing: border-box; */
+    /* word-wrap: break-word; */
+}
+
+/* ===4.CURRENT CITY=== */
+
+.city {
+    border: none;
+}
+
+.card-city {
+    border: none;
+}
+
+/* ===5.FORECAST=== */
+
+.cbforecast {
+    margin: 20px;
+}
+
+
+.main-container {
+    padding-bottom: 20px;
+    opacity: 90%;
+    /* margin: 150px auto;
+    border-radius: 10px;
+    padding: 30px 30px; */
+
+}
+
+.row-blue {
+    background-color: rgb(240, 252, 252);
+    opacity: 90%;
+    /* box-sizing: border-box;
+    border-radius: 0.30rem;
+    margin: 15px;
+    padding: 5px;
+    justify-content: space-around; */
+}
+
+.bg-primary {
+    background-color:  #00bcd4!important;
+}
+
+.btn-primary{
+    background-color:  #00bcd4!important;
+}
